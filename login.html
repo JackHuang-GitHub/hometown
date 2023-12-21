@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>用户登录</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <style>
+    	*{
+    		margin: 0;
+    		padding: 0;
+    	}
+    	body{
+    		background: url(imgs/2.jpg) no-repeat;
+    		background-size: cover;
+    	}
+    	.login-box{
+    		width: 350px;
+    		height: 350px;
+    		border-radius: 10px;
+    		background-color: rgba(0, 0, 0, .3);
+    		margin: 220px auto;
+    	}
+    	.login-box h2{
+    		text-align: center;
+    		padding: 60px 0 20px 0;
+    		color: white;
+    	}
+		.login-box .input-box{
+			margin-left: 50px;
+		}
+		.login-box .input-box label{
+			color: rgba(255, 255, 255, .9);
+		}
+		.login-box .input-box input{
+			outline: none;
+			height: 35px;
+			width: 250px;
+			font-size: 14px;
+			border-radius: 5px;
+			padding: 0 12px;
+			margin: 7px 0;
+			border: 1px solid rgba(255, 255, 255, .5);
+			box-sizing: border-box;
+		}
+		.login-box .input-box input:focus{
+			border: 1px solid rgb(83,123,172);
+		}
+		.login-box .btn-box a{
+			text-decoration: none;
+			display: block;
+			font-size: 13px;
+			margin-left: 240px;
+			color: rgba(255, 255, 255, .9);
+		}
+		.login-box .btn-box a:hover{
+			color: rgba(255, 255, 255, 1);
+		}
+		.login-box .btn-box div{
+			margin: 20px 40px;
+		}
+		.login-box .btn-box div button{
+			outline: none;
+			width: 118px;
+			height: 30px;
+			border: 1px solid rgb(83,123,172);
+			border-radius: 5px;
+			cursor: pointer;
+			color: white;
+
+			margin-left: 10px;
+			background-color: rgb(114,146,183);
+		}
+		.login-box .btn-box div button:hover{
+			background-color: rgb(83,123,172);
+		}
+		.login-box .btn-box div p{
+			color: red;
+			margin: 8px 20px;
+			font-size: 14px;
+		}
+	</style>
+</head>
+
+<body>
+    <div class="login-box">
+        <h2>登录</h2>
+        <div class="input-box">
+            <label>账号</label>
+            <br>
+            <input type="text" class="username" placeholder="默认账户：admin">
+        </div>
+        <div class="input-box">
+            <label>密码</label>
+            <br>
+            <input type="password" class="password" placeholder="默认密码：123">
+        </div>
+        <div class="btn-box">
+            <!-- <a href="#">忘记密码？</a> -->
+            <div>
+                <button style="font-size: 16px">登录</button>
+                <button style="font-size: 16px">注册</button>
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+		let btn = document.querySelectorAll('.btn-box div button')
+
+		let username = document.querySelector('.username')
+		let password = document.querySelector('.password')
+
+		let msg = document.querySelector('.btn-box div p')
+
+		getData()
+		function getData(){
+			let arr = localStorage.getItem('web')
+			if(arr) {
+				return JSON.parse(arr)
+			} else {
+				localStorage.setItem('web', JSON.stringify([{user: 'admin', pwd: '123'}]))
+			}
+		}
+
+		// 登录按钮
+		btn[0].addEventListener('click', function() {
+			console.log('logining...')
+			let data = getData()
+			// console.log(data)
+			for (let k in data){
+				// 判断账户是否存在
+				if(data[k].user === username.value){
+					// 判断密码是否正确
+					if(password.value !== data[k].pwd) {
+						msg.innerHTML = '密码不正确！'
+					} else {
+						msg.innerHTML = ''
+						location.href = 'index.html'
+						localStorage.setItem('webstatus', JSON.stringify([{user: data[k].user}]))
+						console.log(`密码正确 当前用户:${data[k].user}`)
+					}
+					break
+				}
+				msg.innerHTML = '账户不存在！'
+			}
+		})
+		// 注册按钮
+		btn[1].addEventListener('click', function() {
+			location.href = 'register.html'
+		})
+	</script>
+</body>
+</html>

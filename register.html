@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>用户注册</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <style>
+    	*{
+    		margin: 0;
+    		padding: 0;
+    	}
+    	body{
+    		background: url(imgs/2.jpg) no-repeat;
+    		background-size: cover;
+    	}
+    	.register-box{
+    		width: 350px;
+    		height: 420px;
+    		border-radius: 10px;
+    		background-color: rgba(0, 0, 0, .3);
+    		margin: 220px auto;
+    	}
+    	.register-box h2{
+    		text-align: center;
+    		padding: 60px 0 20px 0;
+    		color: white;
+    	}
+		.register-box .input-box{
+			margin-left: 50px;
+		}
+		.register-box .input-box label{
+			color: rgba(255, 255, 255, .9);
+		}
+		.register-box .input-box input{
+			outline: none;
+			height: 35px;
+			width: 250px;
+			font-size: 14px;
+			border-radius: 5px;
+			padding: 0 12px;
+			margin: 7px 0;
+			border: 1px solid rgba(255, 255, 255, .5);
+			box-sizing: border-box;
+		}
+		.register-box .input-box input:focus{
+			border: 1px solid rgb(83,123,172);
+		}
+		.register-box .btn-box div{
+			margin: 25px 40px;
+		}
+		.register-box .btn-box div button{
+			outline: none;
+			width: 118px;
+			height: 30px;
+			border: 1px solid rgb(83,123,172);
+			border-radius: 5px;
+			cursor: pointer;
+			color: white;
+
+			margin-left: 10px;
+			background-color: rgb(114,146,183);
+		}
+		.register-box .btn-box div button:hover{
+			background-color: rgb(83,123,172);
+		}
+		.register-box .btn-box div p{
+			color: red;
+			margin: 10px 20px;
+			font-size: 14px;
+		}
+	</style>
+</head>
+
+<body>
+    <div class="register-box">
+        <h2>Register</h2>
+        <div class="input-box">
+            <label>账号</label>
+            <br>
+            <input type="text" class="user" placeholder='由数字字母下划线组成6-18位'>
+            <span></span>
+        </div>
+        <div class="input-box">
+            <label>密码</label>
+            <br>
+            <input type="password" class="pwd" placeholder='必须包含数字字母下划线 6-18位'>
+            <span></span>
+        </div>
+        <div class="input-box">
+            <label>确认密码</label>
+            <br>
+            <input type="password" class="confirm-pwd">
+            <span></span>
+        </div>
+        <div class="btn-box">
+            <div>
+                <button style="font-size: 16px">注册</button>
+                <button style="font-size: 16px">返回</button>
+           		<p></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+		let btn = document.querySelectorAll('.btn-box div button')
+
+		// 获取账号密码和确认密码框元素
+		let user = document.querySelector('.user')
+		let pwd = document.querySelector('.pwd')
+		let confirmPwd = document.querySelector('.confirm-pwd')
+
+		// 注册提示
+		let msg = document.querySelector('.btn-box div p')
+
+		// 验证账号格式
+		function verifyUser() {
+			let reg = /^[0-9A-Za-z_]{6,18}$/
+			if(!reg.test(user.value)) {
+				console.log('wrong')
+				user.nextElementSibling.innerHTML = '❌'
+				return false
+			}
+			console.log('right')
+			user.nextElementSibling.innerHTML = ''
+			return true
+		}
+		// 验证密码格式
+		function verifyPwd() {
+			let reg = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[_])[A-Za-z\d_]{6,18}$/
+			if(!reg.test(pwd.value)) {
+				console.log('wrong')
+				pwd.nextElementSibling.innerHTML = '❌'
+				return false
+			}
+			console.log('right')
+			pwd.nextElementSibling.innerHTML = ''
+			return true
+		}
+		// 验证二次密码
+		function verifyConfirmPwd() {
+			if(confirmPwd.value !== pwd.value) {
+				console.log('confirmPwd wrong')
+				confirmPwd.nextElementSibling.innerHTML = '❌'
+				return false
+			}
+			console.log('confirmPwd right')
+			confirmPwd.nextElementSibling.innerHTML = ''
+			return true
+		}
+
+		// 监听输入框
+		user.addEventListener('change', verifyUser)
+		pwd.addEventListener('change', verifyPwd)
+		confirmPwd.addEventListener('change', verifyConfirmPwd)
+
+
+		// 读取本地存储
+		function getData(){
+			let arr = localStorage.getItem('web')
+			if(arr) {
+				return JSON.parse(arr)
+			} else {
+				localStorage.setItem('web', JSON.stringify([{user: 'admin01', pwd: 'admin123_'}]))
+			}
+		}
+
+		// 注册按钮
+		btn[0].addEventListener('click', function() {
+			let result = verifyUser() && verifyPwd() && verifyConfirmPwd()
+			if(!result) {
+				// 如果格式不对则不允许提交
+				return false
+			}
+			// 输入格式正确后 执行注册相应的功能
+			console.log('registering...')
+
+			let arr = getData()
+			let newArr = []
+
+			// 验证账户是否已存在
+			for (let k in arr){
+				newArr.push(arr[k].user)
+			}
+			if(newArr.includes(user.value)){
+				// 账户已存在
+				msg.innerHTML = '注册失败！该账户已存在'
+				return false
+			}
+			// 账户不存在 执行以下代码
+
+			arr.push({
+				user: user.value,
+				pwd: pwd.value
+			})
+			localStorage.setItem('web',JSON.stringify(arr))
+
+			msg.innerHTML = '注册成功，正在跳转到登录页面...'
+			setTimeout(function() {
+				location.href = 'login.html'
+			}, 1000)
+		})
+
+		// 返回按钮
+		btn[1].addEventListener('click', function() {
+			location.href = 'login.html'
+		})
+	</script>
+</body>
+</html>

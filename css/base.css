@@ -1,0 +1,139 @@
+/*公共样式表*/
+
+.clearfix::before,
+.clearfix::after{
+	content: '';
+	display: table;
+	clear: both;
+}
+
+/*清除默认样式*/
+*{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+/*去除a的下划线*/
+a{
+	text-decoration: none;
+	color: #333;
+}
+body{
+    font: 16px/1.5 Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+    color: #333;
+    /*background-color: yellowgreen;*/
+    /*background-image: repeating-linear-gradient(yellowgreen, transparent 600px);*/
+    /*transition: all 2s;*/
+    /*background-color: #fff;*/
+    /*min-width: 1210px;*/
+}
+body::before{
+	content: '';
+	width: 100%;
+	height: 800px;
+	display: block;
+	position: absolute;
+	z-index: -1;
+    background-image: repeating-linear-gradient(#99CCFF, transparent);
+}
+/*设置一个类 用来表示中间容器的宽度*/
+.w{
+	/*固定容器的宽度*/
+	width: 1210px;
+	/*设置容器居中*/
+	margin: 0 auto;
+}
+
+.top-status-wrapper{
+	width: 100%;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	background-color: white;
+}
+.top-status{
+
+}
+.top-time{
+}
+.user-status{
+	display: inline-block;
+	margin-left: 200px;
+}
+.logout{
+	display: none;
+	cursor: pointer;
+}
+.logout:hover{
+	color: red;
+}
+
+/*设置共同导航条*/
+.top-bar{
+	height: 80px;
+	/*margin-top: 20px;*/
+	position: relative;
+	/*background-color: white;*/
+}
+
+/*设置logo*/
+.logo{
+	position: absolute;
+	top: 10px;
+	left: 60px;
+	z-index: 99;
+}
+/*设置导航条*/
+.top-inner{
+	height: 80px;
+	line-height: 80px;
+	float: right;
+	margin-right: 100px;
+}
+.top-inner li{
+	float: right;
+	width: 90px;
+	display: block;
+	text-align: center;
+	margin-left: 10px;
+}
+.top-inner li a:hover{
+	color: red;
+}
+
+
+/*返回顶部按钮*/
+.totop{
+	position: fixed;
+	display: none;
+	width: 50px;
+	height: 80px;
+	bottom: 100px;
+	right: 200px;
+	background-color: white;
+	z-index: 99;
+	text-align: center;
+	color: #acaaaa;
+	cursor: pointer;
+	border-radius: 5px;
+}
+.totop div{
+	margin-top: 10px;
+}
+.totop img{
+	width: 30px;
+}
+/*设置页脚*/
+.footer{
+	/*margin-top: 200px;*/
+	/*margin-top: -100px;*/
+	width: 100%;
+	/*button: 0px;*/
+	bottom: 0;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	color: white;
+	background-color: rgb(66, 66, 66);
+}

@@ -1,0 +1,244 @@
+
+/*设置图片轮播*/
+.imgs-wrapper{
+	width: 1210px;
+	height: 350px;
+	position: relative;
+	overflow: hidden;
+	margin: 0 auto;
+}
+.imgs-bar li{
+	position: absolute;
+	text-align: center;
+	opacity: 0;
+	transition: all 1s;
+}
+.imgs-bar img{
+	height: 350px;
+}
+/*设置图片下方的小圆点*/
+.ls{
+	position: absolute;
+	z-index: 1;
+	top: 330px;
+	left: 583px;
+}
+.ls li{
+	width: 10px;
+	height: 10px;
+	background-color: white;
+	margin-left: 8px;
+	float: left;
+	border-radius: 50%;
+}
+/*设置选中后的样式*/
+.imgs-bar .active{
+	opacity: 1;
+}
+.ls .active{
+	background-color: red;
+}
+
+/*设置下部内容块*/
+.bottom-inner{
+	/*height: 3000px;*/
+	margin-top: 10px;
+	/*background-color: #bfa;*/
+}
+.city{
+	/*text-align: center;*/
+}
+.city h1{
+	text-align: center;
+	color: #14B968;
+	/*background-color: #14B968;*/
+}
+.city h1::after{
+	content: '';
+	width: 1210px;
+	height: 1px;
+	display: block;
+	background-color: #14B968;
+}
+/*主页内容区*/
+.city{
+	text-align: center;
+}
+.city img{
+	width: 500px;
+	vertical-align: top;
+}
+.city h3{
+	display: block;
+	margin: 13px 0 15px 10px;
+	color: #717171;
+}
+.city p{
+	/*display: block;*/
+	line-height: 20px;
+	margin: 18px 20px;
+	color: #acaaaa;
+}
+.city .text-inner{
+	display: inline-block;
+	overflow: hidden;
+	width: 500px;
+	margin: 10px 30px 0 10px;
+	border: 1px solid rgba(0, 0, 0, .1);
+	background-color: white;
+	transition: all .5s;
+}
+
+.city .text-inner:hover{
+	transform: translateY(-5px);
+	box-shadow: 8px 8px 10px rgba(0, 0, 0, .3);
+}
+
+/*县城块*/
+.city .text-main{
+	position: relative;
+}
+.city .text-main img{
+	width: 1000px;
+}
+.city .city-list{
+	position: relative;
+}
+.city .city-list img{
+	width: 400px;
+}
+.city .city-list div{
+/*	width: 320px;
+	height: 330px;*/
+	visibility: hidden;
+	/*visibility: visible;*/
+	background-color: white;
+	position: absolute;
+	box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+	overflow: hidden;
+	border-radius: 5px;
+	z-index: 2;
+	transition: transform .3s 0s;
+}
+.city .city-list div[title=武宣县] img{
+	width: 200px;
+	float: right;
+}
+.city .city-list div[title=武宣县]{
+	width: 400px;
+	height: 300px;
+	left: -150px;
+	top: 15px;
+}
+.city .city-list a[title=武宣县]:hover div[title=武宣县]{
+	visibility: visible;
+	transform: translateY(10px);
+}
+.city .city-list a[title=兴宾区]:hover div[title=兴宾区]{
+	visibility: visible;
+	transform: translateY(-10px);
+}
+.city .city-list a[title=兴宾区]{
+	position: absolute;
+	top: -230px;
+	left: 450px;
+}
+.city .city-list div[title=兴宾区]{
+	/*top: -340px;*/
+	bottom: 15px;
+	left: -150px;
+}
+.city .city-list a[title=合山市]:hover div[title=合山市]{
+	visibility: visible;
+	transform: translateY(10px);
+}
+.city .city-list a[title=合山市]{
+	position: absolute;
+	top: -300px;
+	left: 340px;
+}
+.city .city-list div[title=合山市]{
+	top: 15px;
+	left: -150px;
+}
+.city .city-list a[title=忻城县]:hover div[title=忻城县]{
+	visibility: visible;
+	transform: translateX(-10px);
+}
+.city .city-list a[title=忻城县]{
+	position: absolute;
+	top: -400px;
+	left: 240px;
+}
+.city .city-list div[title=忻城县]{
+	top: -90px;
+	/*left: -312px;*/
+	right: 40px;
+}
+.city .city-list a[title=武宣县]{
+	position: absolute;
+	top: -200px;
+	left: 720px;
+}
+.city .city-list a[title=象州县]:hover div[title=象州县]{
+	visibility: visible;
+	transform: translateY(10px);
+}
+.city .city-list div[title=象州县]{
+	top: 15px;
+	left: 0px;
+}
+.city .city-list a[title=象州县]{
+	position: absolute;
+	top: -400px;
+	left: 740px;
+}
+.city .city-list a[title=金秀瑶族自治县]:hover div[title=金秀瑶族自治县]{
+	visibility: visible;
+	transform: translateY(10px);
+}
+.city .city-list div[title=金秀瑶族自治县]{
+	top: 35px;
+	left: 0px;
+}
+.city .city-list a[title=金秀瑶族自治县]{
+	position: absolute;
+	top: -450px;
+	left: 940px;
+}
+/*县城内容块*/
+.city .city-inner div{
+	width: 320px;
+	height: 330px;
+	background-color: white;
+	position: absolute;
+	border: 1px solid rgba(0, 0, 0, .1);
+}
+.city .city-inner div[title=兴宾区]{
+	/*top: 0;*/
+}
+.city .city-inner img{
+	width: 320px;
+}
+
+/*返回顶部按钮*/
+.totop{
+	position: fixed;
+	display: none;
+	width: 50px;
+	height: 80px;
+	bottom: 100px;
+	right: 200px;
+	background-color: white;
+	z-index: 99;
+	text-align: center;
+	color: #acaaaa;
+	cursor: pointer;
+	border-radius: 5px;
+}
+.totop div{
+	margin-top: 10px;
+}
+.totop img{
+	width: 30px;
+}

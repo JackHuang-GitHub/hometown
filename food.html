@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>昭通美食</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<link rel="stylesheet" href="css/base.css">
+	<script src="js/base.js"></script>
+	<style>
+		.food-wrapper{
+			/*height: 4500px;*/
+		}
+		.food-inner img:nth-child(1){
+			transform: translateX(-600px);
+		}
+		.food-inner img:nth-child(2){
+			transform: translateY(-600px);
+		}
+		.food-inner img:nth-child(3){
+			transform: translateX(600px);
+		}
+		.food-inner img{
+			width: 403px;
+			transition: all 1s;
+		}
+		h1{
+			text-align: center;
+			color: green;
+		}
+		h1:after{
+			content: '';
+			display: block;
+			width: 100%;
+			height: 2px;
+			background-color: green;
+		}
+		.food-box{
+			overflow: hidden;
+			border: 1px solid rgba(0, 0, 0, .3);
+			box-sizing: content-box;
+			margin-top: 40px;
+
+			transform: translateY(600px);
+			transition: all 1s;
+		}
+		.food-box div{
+			height: 300px;
+			width: 225px;
+			float: left;
+			overflow: hidden;
+			display: inline-block;
+		}
+		.food-box img{
+			height: 300px;
+		}
+		.food-box h3{
+			margin: 20px 0 20px 250px;
+		}
+		.food-box p{
+			padding: 0 20px 10px 240px;
+			line-height: 30px;
+		}
+	</style>
+</head>
+<body>
+		<!-- 设置顶部状态栏 -->
+    <div class="top-status-wrapper">
+    	<div class="top-status w">
+    		<span class="top-time">北京时间：2022/11/26 01:03:44</span>
+    		<div class="user-status">
+    			欢迎访问! 请 
+    			<a style="font-size: 18px;color: red;" href="login.html">登录</a>
+    			或 
+    			<a style="font-size: 18px;color: red;" href="register.html">注册</a>
+    		</div>
+    		<div class="logout">退出登录</div>
+    	</div>
+    </div>
+	<!-- 设置顶部导航条 -->
+	<div class="top-bar w">
+		<div class="logo"><a href="index.html"><img src="imgs/logo.png" alt=""></a></div>
+        <ul class="top-inner">
+            <li><a href="message.html">欢迎留言</a></li>
+            <li><a href="food.html">昭通美食</a></li>
+            <li><a href="tour.html">旅游风景</a></li>
+            <li><a href="history.html">历史沿革</a></li>
+            <li><a href="index.html">首页</a></li>
+        </ul>
+	</div>
+
+
+	<!-- 美食模块 -->
+	<div class="food-wrapper w">
+		<div class="food-inner">
+			<img src="imgs/food01.jpg" alt=""><img src="imgs/food02.jpg" alt=""><img src="imgs/food03.jpg" alt="">
+		</div>
+		<h1>昭通美食</h1>
+		<div class="food-box">
+			<div><img src="imgs/food01.webp" alt=""></div>
+			<h3>昭通粉饺</h3>
+			<p>
+				粉饺是广西南宁市传统的名小吃，粉饺在昭通
+				也很受欢迎，其米香浓郁，味美爽口，是最受欢迎的昭通小吃之一。昭通粉饺是将糯米打成米浆后晒干的面做饺子皮，馅常见的是木耳香菇瘦肉，也可以包裹其他不同口味的馅料，荤素皆有，风味独特，口感极好。饺子皮晶莹透亮，吃在嘴里韧性十足，纯正的香。昭通粉饺一般都是现做现卖，配上店家自制的酸辣料，吃后让人回味良久。
+			</p>
+		</div>
+		<div class="food-box">
+			<div><img src="imgs/food002.jpg" alt=""></div>
+			<h3>忻城肉粽</h3>
+			<p>
+				忻城肉粽是广西昭通市忻城一带人见人爱的美食，是昭通十大小吃之一。忻城肉粽主要由糯米、猪肉等食材烹饪而成，具有香软、味鲜等特点。其选料讲究，配料多样，制作精细，将糯米加入去皮绿豆及调好味的猪肉块，或腊肉、火腿、鸡肉等，用棕叶包成枕形，中高端低，蒸熟而成。Ma igoo编辑了解到，忻城肉粽的历史悠久，味道香甜，油润不腻，色泽红黄闪亮，以独有的风味，享誉海内外。
+			</p>
+		</div>
+		<div class="food-box">
+			<div><img src="imgs/food003.webp" alt=""></div>
+			<h3>红糟酸</h3>
+			<p>
+				说起昭通特色小吃有哪些，红糟酸肯定是榜上有名的，红糟酸是广西壮族自治区昭通
+				市武宣的一大特色，色泽艳红独特，香味浓郁，阵阵酒香味沁人心脾。在武宣也有着一句“一天不吃酸，两腿打蹿蹿”的俗话，由此可见的武宣对吃酸的执着。昭通红糟酸选用独特工艺制作而成，口感为酸、辣、甜、香色味俱佳。红糟酸的用途广泛，可以跟各种肉类食材一起烹饪，它以独特的味道与滋味，让肉质更加鲜嫩可口，且去油除腻，让口感更具风味；也可以用来跟嫩姜、黄瓜、萝卜、青椒、刀豆等腌制成各种品类的酸，开胃消食，十分爽口，深受当地人喜爱。
+			</p>
+		</div>
+	</div>
+
+
+		<!-- 设置返回顶部块 -->
+	<div class="totop">
+		<div>
+			<img src="imgs/totop.png" alt="">
+			<span>回顶部</span>
+		</div>
+	</div>
+
+	<div class="footer">
+		<h4>我的家乡网站&COPY;版权所有 软件工21104 黄万鑫</h4>
+	</div>
+
+	<script>
+		let foodBoxs = document.querySelectorAll('.food-box')
+		let imgs = document.querySelectorAll('.food-inner img')
+
+		window.addEventListener('load', function() {
+			imgs[0].style.transform = 'translateX(0)'
+			imgs[1].style.transform = 'translateY(0)'
+			imgs[2].style.transform = 'translateX(0)'
+
+			foodBoxs[0].style.transform = 'translateY(0)'
+		})
+
+		window.addEventListener('scroll', function() {
+			for(let i = 1;i < foodBoxs.length; i ++){
+				if (document.documentElement.scrollTop > foodBoxs[i].offsetTop - 900) {
+					foodBoxs[i].style.transform = 'translateY(0)'
+				}
+				if (document.documentElement.scrollTop === 0){
+					foodBoxs[i].style.transform = 'translateY(600px)'
+				}
+			}
+		})
+
+		for(let i = 0;i < foodBoxs.length; i ++){
+			foodBoxs[i].addEventListener('click', function() {
+				console.log(this.offsetTop)
+			})
+		}
+
+	</script>
+</body>
+</html>
