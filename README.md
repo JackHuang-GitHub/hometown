@@ -1,4 +1,5 @@
-纯web，无后端，云南昭通文化宣传  
+云南昭通文化宣传配置
+
 一、mysql数据库导入  
 导入文件在 dependencies/hometown.sql（在Mavicat Premium中创建连接，
 连接名：root，密码：123456其他不变；在root用户名下创建一个hometown数据库
