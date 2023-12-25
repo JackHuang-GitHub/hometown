@@ -8,7 +8,7 @@ window.addEventListener('load', function() {
         if(userStatus){
             if (userStatus.length !== 0){
                 console.log('no')
-                document.querySelector('.user-status').innerHTML = `当前用户：${userStatus[0].user}`
+                document.querySelector('.user-status').innerHTML = `当前用户：${userStatus.user}`
                 document.querySelector('.logout').style.display = 'inline-block'
             }
         }

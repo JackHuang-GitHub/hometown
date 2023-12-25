@@ -2,9 +2,283 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>特产商城</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/base.js"></script>
+    <script src="js/index.js"></script>
 </head>
 <body>
+<!-- 设置顶部状态栏 -->
+<div class="top-status-wrapper w">
+    <div class="top-status w">
+        <span class="top-time">北京时间：2022/11/26 01:03:44</span>
+        <div class="user-status">
+            欢迎访问! 请
+            <a style="font-size: 18px;color: red;" href="login.html">登录</a>
+            或
+            <a style="font-size: 18px;color: red;" href="register.html">注册</a>
+        </div>
+        <div class="logout">退出登录</div>
+    </div>
+</div>
+<!-- 设置顶部导航条 -->
+<div class="top-bar w">
+    <div class="logo"><a href="index.html"><img src="imgs/logo.png" alt=""></a></div>
+    <ul class="top-inner">
+        <li><a href="message.html">欢迎留言</a></li>
+        <li><a href="food.html">昭通美食</a></li>
+        <li><a href="tour.html">旅游风景</a></li>
+        <li><a href="history.html">历史沿革</a></li>
+        <li><a href="speciality.html">特产商城</a></li>
+        <li><a href="index.html">首页</a></li>
+    </ul>
+</div>
+<!-- 广告轮播 -->
+<div id="ad-carousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#ad-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#ad-carousel" data-slide-to="1"></li>
+        <li data-target="#ad-carousel" data-slide-to="2"></li>
+        <li data-target="#ad-carousel" data-slide-to="3"></li>
+        <li data-target="#ad-carousel" data-slide-to="4"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="img/photo-1.png" alt="1 slide">
+        </div>
 
+        <div class="item">
+            <img src="img/photo-2.png" alt="2 slide">
+        </div>
+
+        <div class="item">
+            <img src="img/photo-3.png" alt="3 slide">
+        </div>
+
+        <div class="item">
+            <img src="img/photo-4.png" alt="4 slide">
+        </div>
+
+        <div class="item">
+            <img src="img/photo-5.png" alt="5 slide">
+        </div>
+
+    </div>
+    <a class="left carousel-control" href="#ad-carousel" data-slide="prev"><span
+            class="glyphicon glyphicon-chevron-left"></span></a>
+    <a class="right carousel-control" href="#ad-carousel" data-slide="next"><span
+            class="glyphicon glyphicon-chevron-right"></span></a>
+</div>
+
+
+<!-- 主要内容 -->
+<div class="container summary">
+
+    <!-- 简介 -->
+    <div class="row" id="summary-container">
+        <div class="col-md-4">
+            <img class="img-circle" src="img/treasure-1.png" alt="黑木耳"
+                 style="padding-top: 14px;margin-bottom: -14px">
+
+            <h2>黑木耳</h2>
+
+            <p>东北黑木耳，色泽黑褐，质地柔软呈胶质状，薄而有弹性，味道鲜美且营养丰富。</p>
+
+            <p><a class="btn btn-default" href="#" role="button">点我购买</a></p>
+        </div>
+        <div class="col-md-4">
+            <img class="img-circle" src="img/treasure-2.png" alt="手撕鱿鱼">
+
+            <h2>手撕鱿鱼</h2>
+
+            <p>青岛手撕鱿鱼，严格的加工工艺，精心制作而成，纤维性强且韧性好</p>
+
+            <p><a class="btn btn-default" href="#" role="button">点我购买</a></p>
+        </div>
+        <div class="col-md-4">
+            <img class="img-circle" src="img/treasure-3.png" alt="腊香肠">
+
+            <h2>腊香肠</h2>
+
+            <p>四川腊肠，色泽光润、脂肪雪白、腊衣紧贴、结构紧凑、弯曲有弹性；香气浓郁</p>
+
+            <p><a class="btn btn-default" href="#" role="button">点我购买</a></p>
+        </div>
+    </div>
+    <hr class="feature-divider">
+
+    <ul class="nav nav-tabs" role="tablist" id="feature_tab_1">
+        <li class="active"><a href="#tab-1" role="tab" data-toggle="tab">广西青柚</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="tab-1">
+            <div class="row feature">
+                <div class="col-md-7">
+
+                    <h2 class="feature-heading">广西青柚 <span
+                            class="text-muted">脆嫩无渣，柔软多汁</span></h2>
+
+                    <p class="lead">形美色艳，为上乘保健果品，新鲜果汁中含有类胰岛素成分，有降低血糖的作用，
+                        有益于心血管病及肥胖病患者。柚性寒，味酸，无毒，功能清胃润肠，消食醒酒，化痰止咳，饭后吃几瓣，能帮助消化，
+                        消除疲劳。四季柚除鲜食外，还可制成果汁、果酱、果酒和水果罐头等食品。</p>
+                </div>
+                <div class="col-md-5">
+                    <img class="feature-image img-responsive" src="img/recommend-1.png"
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ul class="nav nav-tabs feature_tab" role="tablist" id="feature_tab_2">
+        <li class="active"><a href="#tab-2" role="tab" data-toggle="tab">新疆葡萄干</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="tab-2">
+            <div class="row feature">
+                <div class="col-md-5">
+                    <img class="feature-image img-responsive" src="img/recommend-2.png"
+                    >
+                </div>
+                <div class="col-md-7">
+
+                    <h2 class="feature-heading">新疆葡萄干 <span class="text-muted">肉软清甜，营养丰富</span>
+                    </h2>
+
+                    <p class="lead">
+                        不少干果都有其促进人体健康的绝招，而葡萄干所含的营养成分更是令营养学家赞叹不已，葡萄干能改善直肠的健康，因为葡萄干含有纤维和酒石酸，能让排泄物快速通过直肠，减少污物在肠中停留的时间。
+                        另外，葡萄干中的纤维能防止果糖在血液中转化成三酸甘油酯---一种血液脂肪，从而降低罹患心脏病的危险
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ul class="nav nav-tabs feature_tab" role="tablist" id="feature_tab_3">
+        <li class="active"><a href="#tab-3" role="tab" data-toggle="tab">江西茶树菇</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="tab-3">
+            <div class="row feature">
+                <div class="col-md-7">
+
+                    <h2 class="feature-heading">江西茶树菇 <span class="text-muted">盖嫩柄脆，味纯清香</span></h2>
+
+                    <p class="lead">集高蛋白，低脂肪，低糖分，保健食疗于一身的纯天然无公害保健食用菌。经过优化改良的茶树菇，
+                        盖嫩柄脆，味纯清香，口感极佳，可烹制成各种美味佳肴，其营养价值超过香菇等其他食用菌，属高档食用菌类。。</p>
+                </div>
+                <div class="col-md-5">
+                    <img class="feature-image img-responsive" src="img/recommend-3.png"
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+    <ul class="nav nav-tabs feature_tab" role="tablist" id="feature_tab_4">
+        <li class="active"><a href="#tab-4" role="tab" data-toggle="tab">海南榴莲</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="tab-4">
+            <div class="row feature">
+                <div class="col-md-5">
+                    <img class="feature-image img-responsive" src="img/recommend-4.png"
+                    >
+                </div>
+                <div class="col-md-7">
+
+                    <h2 class="feature-heading">海南榴莲 <span class="text-muted">黏滑多汁，酥软味甜</span>
+                    </h2>
+
+                    <p class="lead">榴莲果肉营养丰富，有“水果之王”美称。榴莲营养价值极高，经常食用可以强身健体，健脾补气，补肾壮阳，温暖身体，属滋补有益的水果；
+                        榴莲性热，可以活血散寒，缓解经痛，特别适合受痛经困扰的女性食用；它还能改善腹部寒凉、促进体温上升，是寒性体质者的理想补品。</p>
+                </div>
+            </div>
+        </div>
+        <ul class="nav nav-tabs feature_tab" role="tablist" id="feature_tab_5">
+            <li class="active"><a href="#tab-5" role="tab" data-toggle="tab">河北核桃</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="tab-5">
+                <div class="row feature">
+                    <div class="col-md-7">
+
+                        <h2 class="feature-heading">河北核桃 <span class="text-muted">补气养血，润燥化痰</span></h2>
+
+                        <p class="lead">
+                            为胡桃科植物。与扁桃、腰果、榛子并称为世界著名的“四大干果”。核桃仁含有丰富的营养素，每百克含蛋白质15~20克，脂肪较多，碳水化合物10克;并含有人体必需的钙、磷、铁等多种微量元素和矿物质，以及胡萝卜素、核黄素等多种维生素。
+                            对人体有益。是深受老百姓喜爱的坚果类食品之一。被誉为“万岁子”、“长寿果”。</p>
+                    </div>
+                    <div class="col-md-5">
+                        <img class="feature-image img-responsive" src="img/recommend-5.png"
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 关于 -->
+        <div class="modal fade" id="about-modal" tabindex="-1" role="dialog" aria-labelledby="modal-label"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span
+                                aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+                        <h4 class="modal-title" id="modal-label">关于我们</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>皓月商城是一家结合旅游与文化，专注于中国各地特色美食与特产的商城，我们的宗旨是，为您的提供旅游当地最
+                            优质的特产，在任何地方都能吃到的最地道特产</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">了解了</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--页脚-->
+<!--        <div class="footer">-->
+<!--            <h4>我的家乡网站&COPY;版权所有 软件工21104 黄万鑫</h4>-->
+<!--        </div>-->
+
+    </div>
+</div>
 </body>
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+    $(function () {
+        $('#ad-carousel').carousel();
+        $('#menu-nav .navbar-collapse a').click(function (e) {
+            var href = $(this).attr('href');
+            var tabId = $(this).attr('data-tab');
+            if ('#' !== href) {
+                e.preventDefault();
+                $(document).scrollTop($(href).offset().top - 70);
+                if (tabId) {
+                    $('#feature_tab_1 a[href=#' + tabId + ']').tab('show');
+                    $('#feature_tab_2 a[href=#' + tabId + ']').tab('show');
+                    $('#feature_tab_3 a[href=#' + tabId + ']').tab('show');
+                    $('#feature_tab_4 a[href=#' + tabId + ']').tab('show');
+                    $('#feature_tab_5 a[href=#' + tabId + ']').tab('show');
+                }
+            }
+        });
+
+    });
+</script>
 </html>
