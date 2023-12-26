@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>掩模-只展示地图指定区域</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <style>
+        body,
+        html,
+        #container {
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            font-family: "微软雅黑";
+        }
+        .info {
+            z-index: 999;
+            width: auto;
+            min-width: 22rem;
+            padding: .75rem 1.25rem;
+            margin-left: 1.25rem;
+            position: fixed;
+            top: 1rem;
+            background-color: #fff;
+            border-radius: .25rem;
+            font-size: 14px;
+            color: #666;
+            box-shadow: 0 2px 6px 0 rgba(27, 142, 236, 0.5);
+        }
+    </style>
+    <script src="//bj.bcebos.com/v1/mapopen/cms/bmapgldemo/custom/customgreen.js"></script>
+    <script src="//api.map.baidu.com/api?type=webgl&v=1.0&ak=您的密钥"></script>
+</head>
+<body>
+<div id="container"></div>
+</body>
+</html>
+<script>
+    var map = new BMapGL.Map('container', {
+        backgroundColor: [192, 214, 213, 100]
+    });
+    var testPt = new BMapGL.Point(116.20596467080586,40.0144555532275);
+    map.centerAndZoom(testPt, 12);
+    map.enableScrollWheelZoom();
+    map.setMapStyleV2({
+        styleJson: StyleJson3
+    });
+
+    var bdary = new BMapGL.Boundary();
+    bdary.get('海淀区', function (rs) {
+        // 绘制行政区
+        for (var i = 0; i < rs.boundaries.length; i++) {
+            var path = [];
+            var xyArr = rs.boundaries[i].split(';');
+            var ptArr = [];
+            for (var j = 0; j < xyArr.length; j++) {
+                var tmp = xyArr[j].split(',');
+                var pt = new BMapGL.Point(tmp[0], tmp[1]);
+                ptArr.push(pt);
+            }
+            var mapmask = new BMapGL.MapMask(ptArr, {
+                isBuildingMask: true,
+                isPoiMask: true,
+                isMapMask: true,
+                showRegion: 'inside',
+                topFillColor: '#5679ea',
+                topFillOpacity: 0.5,
+                sideFillColor: '#5679ea',
+                sideFillOpacity: 0.9
+            });
+            map.addOverlay(mapmask);
+            var border = new BMapGL.Polyline(ptArr, {
+                strokeColor: '#4ca7a2',
+                strokeWeight: 3,
+                strokeOpacity: 1
+            });
+            map.addOverlay(border);
+        }
+    });
+
+    var marker = new BMapGL.Marker(new BMapGL.Point(116.26165756693067,40.038813377487905));
+    map.addOverlay(marker);
+    var marker2 = new BMapGL.Marker(new BMapGL.Point(116.10819372972905,40.00842014047728));
+    map.addOverlay(marker2);
+</script>
